@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootombo Technicians Services</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+    body{background:#0f172a;color:#fff;}
+    header{background:#111827;padding:20px;position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;}
+    header h1{font-size:20px;color:#38bdf8;}
+    nav a{color:#fff;margin:0 10px;text-decoration:none;}
+    nav a:hover{color:#38bdf8;}
+    .hero{padding:80px 20px;text-align:center;background:linear-gradient(135deg,#1e3a8a,#0f172a);}
+    .hero h2{font-size:40px;margin-bottom:10px;}
+    .hero p{font-size:18px;opacity:0.8;}
+    .btn{margin-top:20px;padding:10px 20px;background:#38bdf8;border:none;color:#000;font-weight:bold;cursor:pointer;border-radius:5px;}
+    .section{padding:50px 20px;max-width:1000px;margin:auto;}
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+    .card{background:#1f2937;padding:20px;border-radius:10px;}
+    .card h3{color:#38bdf8;margin-bottom:10px;}
+    .contact{background:#111827;padding:30px;border-radius:10px;}
+    input,textarea{width:100%;padding:10px;margin:10px 0;border:none;border-radius:5px;}
+    button{background:#38bdf8;padding:10px;border:none;cursor:pointer;font-weight:bold;}
+    footer{text-align:center;padding:20px;background:#0b1220;margin-top:30px;}
+    .floating{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:10px;}
+    .floating a{background:#38bdf8;color:#000;padding:10px;border-radius:50px;text-decoration:none;font-weight:bold;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Bootombo Technicians</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Reliable Electrical & Technical Services</h2>
+  <p>Fast mobile technicians in Chogoria & surrounding areas</p>
+  <button class="btn" onclick="document.getElementById('contact').scrollIntoView()">Book Now</button>
+</section>
+
+<section class="section" id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card"><h3>Electrical Wiring</h3><p>House and commercial wiring services.</p></div>
+    <div class="card"><h3>Repairs</h3><p>Fault finding and appliance repairs.</p></div>
+    <div class="card"><h3>Installations</h3><p>Lighting, sockets, and systems installation.</p></div>
+    <div class="card"><h3>Emergency Callouts</h3><p>24/7 mobile technician support.</p></div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact / Booking</h2>
+  <div class="contact">
+    <form onsubmit="sendMessage(event)">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="text" id="phone" placeholder="Phone Number" required />
+      <textarea id="message" placeholder="Describe your issue" required></textarea>
+      <button type="submit">Send Booking</button>
+    </form>
+    <p style="margin-top:10px;">Or call: 0111474378</p>
+    <p>Email: shivatryoti@gmail.com</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Bootombo Technicians Services</p>
+</footer>
+
+<div class="floating">
+  <a href="https://wa.me/254111474378" target="_blank">WhatsApp</a>
+  <a href="tel:0111474378">Call</a>
+</div>
+
+<script>
+function sendMessage(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const phone=document.getElementById('phone').value;
+  const message=document.getElementById('message').value;
+
+  const mailto=`mailto:shivatryoti@gmail.com?subject=New Booking from ${name}&body=Phone: ${phone}%0D%0A${message}`;
+  window.location.href=mailto;
+}
+</script>
+
+</body>
+</html>
